@@ -1,9 +1,0 @@
-<ng-content select=".header"></ng-content>
-
-<div class="todo-list-item">
-  <span *ngIf="todo.completed" [ngClass]="{ 'completed': todo.completed }">{{todo.title}}</span>
-  <button (click)="toggleCompleted()">Toggle Completed</button>
-</div>
-
-
-<ng-content select=".footer"></ng-content>
