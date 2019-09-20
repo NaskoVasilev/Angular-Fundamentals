@@ -1,0 +1,11 @@
+<div>
+  <input #nameInput type="text">
+  <button (click)="addTodo(nameInput.value, $event); nameInput.value = '';">Add</button>
+</div>
+<div id="todo-list">
+  <softuni-todo-item *ngFor="let todo of todos; let i = index;" [todo]="todo"
+    (toggleEvent)="toggleCompleted(i, $event)">
+    <div class="header">Header</div>
+    <div class="footer">Footer</div>
+  </softuni-todo-item>
+</div>

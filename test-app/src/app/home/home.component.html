@@ -1,0 +1,6 @@
+<p>Game list</p>
+<ul *ngFor="let game of games">
+    <game [gameProp]="game" (onReacted)="onReacted($event)"></game>
+</ul>
+<div>Likes: {{likes}}</div>
+<div>Dislikes: {{dislikes}}</div>
