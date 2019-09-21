@@ -1,0 +1,4 @@
+<div class="todo-list-item">
+  <span [ngClass]="{ 'completed': todo.completed }">{{todo.title}}</span>
+  <button (click)="toggleCompleted()">Toggle Completed</button>
+</div>
