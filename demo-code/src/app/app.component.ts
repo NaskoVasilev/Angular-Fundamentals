@@ -1,10 +1,7 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, DoCheck } from '@angular/core';
 import { TodoService } from './todo.service';
 import { ITodo } from './interfaces';
-import { fromEvent } from 'rxjs';
-import { map, throttle, throttleTime } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'softuni-root',

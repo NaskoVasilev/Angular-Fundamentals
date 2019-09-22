@@ -1,0 +1,8 @@
+<p>
+  about works!
+</p>
+<nav>
+  <a [routerLink]="['/about', {outlets: { 'about': ['one'] }}]">Section one</a>
+  <a [routerLink]="['/about', {outlets: { 'about': ['two'] }}]">Section two</a>
+</nav>
+<router-outlet name="about"></router-outlet>

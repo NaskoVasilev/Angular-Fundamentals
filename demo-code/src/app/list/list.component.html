@@ -1,0 +1,9 @@
+<p>
+  list works!
+</p>
+<input type="text" #text>
+<div *ngFor="let todo of todos" [ngClass]="{'completed': todo.completed}">
+  <p>{{todo.title}}</p>
+  <a [routerLink]="['/todo', 'details', todo.id]" [queryParams]="{title: todo.title}">Edit</a>
+</div>
+

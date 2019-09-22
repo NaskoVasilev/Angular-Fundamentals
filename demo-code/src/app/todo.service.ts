@@ -37,11 +37,14 @@ export class TodoService {
     // setTimeout(() => subscription.unsubscribe(), 3000); 
   }
 
-  load(): void {
-    this.httpClient.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos').subscribe(todos => {
-      this.todos = todos;
-    });
+  load(): Observable<ITodo[]> {
+    return this.httpClient.get<ITodo[]>('https://jsonplaceholder.typicode.com/todos')
   }
+
+  loadById(id: number): Observable<ITodo> {
+    return this.httpClient.get<ITodo>('https://jsonplaceholder.typicode.com/todos/' + id);
+  }
+
 
   addTodo(title: string) {
     this.todos.push({ title, completed: false });
