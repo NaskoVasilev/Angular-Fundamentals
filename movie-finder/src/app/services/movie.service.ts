@@ -42,6 +42,11 @@ export class MovieService {
     return this.getMovies(DramaMovies);
   }
 
+
+  serachMovies(query: string): Observable<Movie[]> {
+    return this.http.get<Movie[]>(BaseUrl + '/search/movie' + QueryStringSign + ApiKeyQueryString + `&query=${query}`);
+  }
+
   private getMovies(path: string): Observable<Movie[]> {
     return this.http.get<Movie[]>(BaseUrl + path + QueryStringDelimiter + ApiKeyQueryString)
       .pipe(

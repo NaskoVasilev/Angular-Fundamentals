@@ -1,0 +1,6 @@
+<img *ngIf="movie.poster_path" class="img-thumbnail" src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+<h4>{{movie.title}}</h4>
+<p>{{movie.release_date}}</p>
+<p>
+    <a class="btn btn-default" routerLink="/movies/{{movie.id}}">View Details</a>
+</p>
