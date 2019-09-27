@@ -1,13 +1,27 @@
 <h3 class="mx-4 mb-2">Popular movies</h3>
 <div class="row mx-3">
     <div class="col-md-2" *ngFor="let movie of popularMovies">
-        <app-movie [movie]="movie" (movieDetails)="movieDetailsClicked($event)"></app-movie>
+        <app-movie [movie]="movie"></app-movie>
     </div>
 </div>
 
 <h3 class="mx-4 mb-2">In theatre movies</h3>
 <div class="row mx-3">
     <div class="col-md-2" *ngFor="let movie of theatreMovies">
-        <app-movie [movie]="movie" (movieDetailsClicked)="movieDetailsClicked($event)"></app-movie>
+        <app-movie [movie]="movie"></app-movie>
+    </div>
+</div>
+
+<h3 class="mx-4 mb-2">Kids movies</h3>
+<div class="row mx-3">
+    <div class="col-md-2" *ngFor="let movie of kidsMovies">
+        <app-movie [movie]="movie"></app-movie>
+    </div>
+</div>
+
+<h3 class="mx-4 mb-2">Best drama movies</h3>
+<div class="row mx-3">
+    <div class="col-md-2" *ngFor="let movie of dramaMovies">
+        <app-movie [movie]="movie"></app-movie>
     </div>
 </div>

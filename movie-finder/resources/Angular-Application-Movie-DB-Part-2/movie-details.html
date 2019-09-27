@@ -1,0 +1,12 @@
+<div class="container w-50 mt-5">
+  <h3 class="panel-title">{{/*movie title*/}}</h3>
+	<img class="thumbnail" src="http://image.tmdb.org/t/p/w500/{{/*movie poster*/}}">
+	<ul class="list-group">
+	  <li class="list-group-item">Genres:
+		<span *ngFor="let genre of movie.genres">{{/*movie genre*/}} </span>
+	  </li>
+	  <li class="list-group-item">Release Date: {{/*movie release date*/}}</li>
+	</ul>
+	<a *ngIf="movie.homepage" href="{{/*movie home page*/}}" target="_blank" class="btn btn-default">Visit Movie
+	  Website</a>
+</div>

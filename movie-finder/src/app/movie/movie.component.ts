@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import Movie from '../models/movie';
 
 @Component({
@@ -6,16 +6,8 @@ import Movie from '../models/movie';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.css']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent {
   @Input('movie') movie: Movie;
-  @Output('movieDetailsClicked') movieDetailsEmitter: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() { }
-
-  ngOnInit() {
-  }
-
-  onDetailsClick(): void{
-    console.log("From child: Button with id: " + this.movie.id);
-    this.movieDetailsEmitter.emit(this.movie.id);
-  }
 }
