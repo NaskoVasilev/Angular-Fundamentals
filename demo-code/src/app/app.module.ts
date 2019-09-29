@@ -14,6 +14,8 @@ import { ListComponent } from './list/list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
+import { HighlightDirective } from './highlight.directive';
+import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TwoComponent } from './two/two.component';
     ListComponent,
     NotFoundComponent,
     OneComponent,
-    TwoComponent
+    TwoComponent,
+    HighlightDirective,
+    DirectiveDemoComponent
   ],
   imports: [
     BrowserModule,

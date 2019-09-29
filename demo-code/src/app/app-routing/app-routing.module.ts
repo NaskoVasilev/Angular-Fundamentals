@@ -10,6 +10,8 @@ import { ListComponent } from '../list/list.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { OneComponent } from '../one/one.component';
 import { TwoComponent } from '../two/two.component';
+import { AppComponent } from '../app.component';
+import { DirectiveDemoComponent } from '../directive-demo/directive-demo.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,10 @@ const routes: Routes = [
     resolve: [TodoResolver],
     canActivate: [HomeActivtor],
     canDeactivate: [HomeDeactivtor],
+  },
+  {
+    path: 'directive/demo',
+    component: DirectiveDemoComponent,
   },
   {
     path: 'about',
