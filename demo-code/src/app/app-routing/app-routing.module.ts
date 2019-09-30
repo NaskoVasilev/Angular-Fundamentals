@@ -12,6 +12,8 @@ import { OneComponent } from '../one/one.component';
 import { TwoComponent } from '../two/two.component';
 import { AppComponent } from '../app.component';
 import { DirectiveDemoComponent } from '../directive-demo/directive-demo.component';
+import { LoginComponent } from "../login/LoginComponent";
+import { RegisterComponent } from '../register/register.component';
 
 const routes: Routes = [
   {
@@ -54,6 +56,14 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: DetailsComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'todo',

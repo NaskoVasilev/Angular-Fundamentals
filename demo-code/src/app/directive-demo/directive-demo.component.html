@@ -1,3 +1,6 @@
 <input #currentNumberInput type="number" [value]="inputValue" min="0" (change)="changeValue($event)"> 
-<div softuniHighlight [value]="inputValue" [index]="0">0</div>
-<div softuniHighlight [value]="inputValue" [index]="1">1</div>
+<div #elementOne="highlighter" softuniHighlight [value]="inputValue" [index]="0">0</div>
+<div #elementTwo="highlighter" softuniHighlight [value]="inputValue" [index]="1">1</div>
+
+<p>Element one properties: Background color: {{elementOne.backgroundColor}} and text color: {{elementOne.textColor}}</p>
+<p>Element two properties: Background color: {{elementTwo.backgroundColor}} and text color: {{elementTwo.textColor}}</p>

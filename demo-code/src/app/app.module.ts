@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoService } from './todo.service';
@@ -16,6 +19,9 @@ import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { HighlightDirective } from './highlight.directive';
 import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
+import { LoginComponent } from "./login/LoginComponent";
+import { AgeValidatorDirective } from './age-validator.directive';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +35,19 @@ import { DirectiveDemoComponent } from './directive-demo/directive-demo.componen
     OneComponent,
     TwoComponent,
     HighlightDirective,
-    DirectiveDemoComponent
+    DirectiveDemoComponent,
+    LoginComponent,
+    AgeValidatorDirective,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     TodoModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [TodoService],
   bootstrap: [
