@@ -14,6 +14,7 @@ import { AppComponent } from '../app.component';
 import { DirectiveDemoComponent } from '../directive-demo/directive-demo.component';
 import { LoginComponent } from "../login/LoginComponent";
 import { RegisterComponent } from '../register/register.component';
+import { AddLaptopComponent } from '../add-laptop/add-laptop.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'laptop/add',
+    component: AddLaptopComponent
   },
   {
     path: 'todo',

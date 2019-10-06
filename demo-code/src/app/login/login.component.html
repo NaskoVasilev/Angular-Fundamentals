@@ -1,0 +1,37 @@
+<form action="post" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+  <div class="form-group">
+    <div>
+        <label for="email">Email</label>
+    </div>
+    <input #emailModel="ngModel" ngModel type="text" id="email" name="email" required>
+    <div *ngIf="emailModel.touched && emailModel.invalid" class="error">Email is required</div>
+  </div>
+  <div class="form-group">
+      <div>
+          <label for="age">Age</label>
+      </div>
+      <input #ageModel="ngModel" ngModel type="number" id="age" name="age" value="18" softuniAgeValidator>
+      <div *ngIf="ageModel.touched && ageModel.invalid">{{ageModel.errors | json}}</div>
+    </div>
+  <div class="form-group"> 
+   <div>
+      <label for="password">Password</label>
+   </div>
+    <input ngModel type="password" id="password" name="password" required>
+  </div>
+  <div>
+    <button [disabled]="loginForm.invalid">Login</button>
+  </div>
+</form>
+
+<div>
+    {{loginForm.value | json}}
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="inputValue">
+</div>
+
+<div>
+  Two-way data binding: {{inputValue}}
+</div>

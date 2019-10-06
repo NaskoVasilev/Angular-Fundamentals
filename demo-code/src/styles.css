@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+input.ng-valid {
+    border-left: 5px solid rgb(164, 226, 167); /* green */
+}
+input.ng-invalid.ng-touched {
+border-left: 5px solid rgb(219, 20, 17); /* red */
+}
+
+
+/* input.ng-valid{
+    background-color: green;
+}
+
+input.ng-invalid{
+    background-color: red;
+} */
+/* 
+input.ng-dirty{
+    background-color: brown;
+}
+
+input.ng-pristine{
+    background-color: blueviolet;
+} */
+/* 
+input.ng-touched{
+    background-color: blueviolet;
+}
+
+input.ng-untouched{
+    background-color: black ;
+}
+ */

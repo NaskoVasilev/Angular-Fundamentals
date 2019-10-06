@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+  <div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control">
+      <div class="alert alert-danger" *ngIf="nameControl.errors && (nameControl.touched || nameControl.dirty)">
+        <span *ngIf="nameControl.errors['required']">The name is required</span>
+        <span *ngIf="nameControl.errors.minlength">The name must be at least 3 symbols</span>
+        <span *ngIf="nameControl.errors.maxlength">The name must be at most 30 symbols</span>
+      </div>
+    </div>
+    <div>
+      <label>Age</label>
+    </div>
+    <input type="number" formControlName="age">
+    <div *ngIf="ageControl.touched && ageControl.invalid" class="error">{{ageControl.errors | json}}</div>
+  </div>
+  <div>
+    <div>
+      <label>Email</label>
+    </div>
+    <input type="text" formControlName="email">
+    <div *ngIf="emailControl.touched && emailControl.invalid" class="error">Email is required</div>
+  </div>
+  <div formArrayName="addresses">
+    <div *ngFor="let address of addresses.controls; let i = index;" [formGroupName]="i">
+      <div>
+        <label>Street</label>
+        <input formControlName="street">
+        <div *ngIf="address.get('street').invalid && address.get('street').touched" class="error">Email is required</div>
+      </div>
+      <div>
+        <label>Post code</label>
+        <input formControlName="postCode">
+        <div *ngIf="address.get('postCode').invalid && address.get('postCode').touched" class="error">Post code is required</div>
+
+      </div>
+    </div>
+  </div>
+  <button (click)="addAddress()">Add address</button>
+
+  {{form.value | json}}
+</form>

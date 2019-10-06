@@ -22,6 +22,7 @@ import { DirectiveDemoComponent } from './directive-demo/directive-demo.componen
 import { LoginComponent } from "./login/LoginComponent";
 import { AgeValidatorDirective } from './age-validator.directive';
 import { RegisterComponent } from './register/register.component';
+import { AddLaptopComponent } from './add-laptop/add-laptop.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RegisterComponent } from './register/register.component';
     DirectiveDemoComponent,
     LoginComponent,
     AgeValidatorDirective,
-    RegisterComponent
+    RegisterComponent,
+    AddLaptopComponent
   ],
   imports: [
     BrowserModule,
