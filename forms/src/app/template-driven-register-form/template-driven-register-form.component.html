@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <h1>Registration Form</h1>
+      <form #form="ngForm" (submit)="register(form.value)">
+        <pre>{{form.value | json}}</pre>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+          </div>
+          <input ngModel #fullName="ngModel" required pattern="[A-Z][a-z]+\s[A-Z][a-z]+" name="fullName"
+            class="form-control" placeholder="Full Name">
+        </div>
+        <div class="alert alert-danger" *ngIf="fullName.touched && fullName.errors?.required">
+          The full name input field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="fullName.touched && fullName.errors?.pattern">
+          The full name input field must contain two names (letters only) separated by a space. Both should start with a
+          capital letter. Exmaple: 'Atanas Vasilev'.
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+          </div>
+          <input ngModel #email="ngModel" required type="text" name="email" class="form-control"
+            placeholder="Email Address"
+            pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+        </div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">
+          The email input field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="email.errors?.pattern">
+          The email input field must be valid email address. Exmaple: exmaple@example.com
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+          </div>
+          <select ngModel #phoneNumberFormat="ngModel" required name="phoneNumberFormat" class="custom-select"
+            style="max-width: 120px;">
+            <option disabled selected>Choose phone number format</option>
+            <option [value]="phoneNumberFormat" *ngFor="let phoneNumberFormat of phoneNumberFormats">
+              {{phoneNumberFormat}}</option>
+          </select>
+          <input ngModel #phoneNumber="ngModel" required pattern="\d{9}" name="phoneNumber" class="form-control"
+            placeholder="Phone number" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="phoneNumberFormat.touched && phoneNumberFormat.errors?.required">
+          The phone number format input field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="phoneNumber.touched && phoneNumber.errors?.required">
+          The phone number input field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="phoneNumber.errors?.pattern">
+          The phone number input field must be a 9 digit number.
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+          </div>
+          <select ngModel #position="ngModel" required name="position" class="form-control">
+            <option disabled selected>Choose position</option>
+            <option [value]="position" *ngFor="let position of positions">{{position}}</option>
+          </select>
+        </div>
+        <div class="alert alert-danger" *ngIf="position.touched && position.errors?.required">
+          The position input field is required.
+        </div>
+        <div ngModelGroup="passwords" #passwords="ngModelGroup">
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input ngModel #password="ngModel" required pattern="^[A-Za-z0-9]{3,16}$" name="password" class="form-control"
+              placeholder="Create password" type="password">
+          </div>
+          <div class="alert alert-danger" *ngIf="password.touched && password.errors?.required">
+            The password input field is required.
+          </div>
+          <div class="alert alert-danger" *ngIf="password.errors?.pattern">
+            The password input field must be between 3 and 16 symbols and must contain only letters and digits.
+          </div>
+          <div class="form-group input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input ngModel #confirmPassword="ngModel" required name="confirmPassword" class="form-control"
+              placeholder="Repeat password" type="password">
+          </div>
+          <div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
+            The confirm password input field is required.
+          </div>
+          <div class="alert alert-danger" *ngIf="passwords.touched && confirmPassword.value != password.value">
+              Both passwords must match.
+            </div>
+        </div>
+        <div class="form-group input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-image"></i> </span>
+          </div>
+          <input ngModel #imageUrl="ngModel" appImageUrlValidator type="url" name="email" class="form-control" placeholder="Image url">
+        </div>
+        <div class="alert alert-danger" *ngIf="form.errors?.image">
+          Image url must starts with http and ends with .png/.jpg
+        </div>
+        <div class="form-group">
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-block"> Create Account </button>
+        </div>
+        <p class="text-center">Have an account? <a href="">Log In</a> </p>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
