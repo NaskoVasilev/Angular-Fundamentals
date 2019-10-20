@@ -11,7 +11,7 @@ export class TemplateDrivenRegisterFormComponent {
   phoneNumberFormats: string[] = ["+701", "+198", "+972", "+359", "+971"]
   positions: string[] = ["Designer", "Accounting", "Manager"]
   
-  @ViewChild('form')
+  @ViewChild('form', {read: NgForm, static: false})
   form: NgForm
   
   constructor() { }
