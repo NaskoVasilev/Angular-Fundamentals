@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {of as observableOf, Observable} from 'rxjs'
 import { delay } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +20,13 @@ export class PostService {
     }
   ]
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   load(){
     return observableOf(this.posts).pipe(delay(100));
+  }
+
+  create(title: string, content: string){
+    return this.httpClient.post('feed/post/create', {title, content});
   }
 }

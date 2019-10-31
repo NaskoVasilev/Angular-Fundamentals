@@ -31,8 +31,8 @@ export class PipeDemoComponent implements OnInit, OnDestroy {
     // })
     this.users$ = this.userService.load();
     this.posts$ = this.postService.load();
-
-    this.subscription = zip(this.postService.load(), this.userService.load())
+    
+    zip(this.postService.load(), this.userService.load())
     .pipe(takeUntil(this.isAlive$))
     .subscribe(([posts, users]) =>{
       this.posts = posts;

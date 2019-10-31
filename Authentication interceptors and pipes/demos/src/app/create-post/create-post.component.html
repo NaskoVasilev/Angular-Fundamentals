@@ -1,0 +1,12 @@
+<form ngForm #form="ngForm" (submit)="submitHandler(form)">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input ngModel name="title" id="title" type="text" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <input ngModel name="content" id="content" type="text" class="form-control" minlength="5">
+    </div>
+
+    <button [disabled]="form.invalid" type="submit" class="btn btn-success">Create post</button>
+</form>
