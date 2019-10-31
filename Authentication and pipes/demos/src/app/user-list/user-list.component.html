@@ -1,0 +1,7 @@
+<h2>Custom pipe demo</h2>
+<ul>
+    <li *ngFor="let user of users; let i = index">
+        <!-- First name: {{user.firstName}} | Posts: {{getUserPostCount(user.id)}} -->
+        First name: {{user.firstName}} | Posts count: {{posts | postCount : user.id : i}}
+    </li>
+</ul>

@@ -1,0 +1,12 @@
+<h2>Json pipe demo</h2>
+<p>{{obj | json}}</p>
+
+<h2>Date pipe demo</h2>
+<p>{{now | date}}</p>
+
+<h2>Date pipe demo</h2>
+<p>{{now | date : 'dd/MM/yyyy'}}</p>
+
+<!-- <app-user-list *ngIf="(users$ | async) && (posts$ | async)" [users]='users$ | async' [posts]='posts$ | async'></app-user-list> -->
+<app-user-list *ngIf="users && posts" [users]='users' [posts]='posts'></app-user-list>
+<button (click)="addPost()">Add post</button>
