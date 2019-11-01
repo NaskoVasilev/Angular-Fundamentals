@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Sign Up</h1>
+  <form (ngSubmit)="signUp()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" 
+         required
+         ngModel
+         #name="ngModel"
+         name="name">
+
+        <div *ngIf="name.invalid && name.touched" class="alert alert-dark">
+          Please provide your name!
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" 
+      required
+      email
+      ngModel
+      #email="ngModel"
+      name="email">
+
+      <div *ngIf="email.invalid && email.touched" class="alert alert-dark">
+        Please provide a correct email address!
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" 
+        required
+        ngModel
+        #password="ngModel"
+        name="password"
+        minlength="4">
+
+      <div *ngIf="password.invalid && password.touched" class="alert alert-dark">
+        Password must have at least 4 characters!
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark" [disabled]="registerForm.invalid">Sign Up</button>
+  </form>
+</div>

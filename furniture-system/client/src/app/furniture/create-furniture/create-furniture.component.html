@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Create New Furniture</h1>
+      <p>Please fill all fields.</p>
+    </div>
+  </div>
+  <form [formGroup]="form" (submit)="createFurniture()">
+    <div class="row space-top">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label" for="new-make">Make</label>
+          <input formControlName="make" class="form-control" id="new-make" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="make.touched && make.errors?.required">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="make.errors?.minlength">
+          Make must be at least {{make.errors.minlength.requiredLength}} symbols.
+        </div>
+
+        <div class="form-group has-success">
+          <label class="form-control-label" for="new-model">Model</label>
+          <input formControlName="model" class="form-control is-valid" id="new-model" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="model.touched && model.errors?.required">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="model.errors?.minlength">
+          Model must be at least {{model.errors.minlength.requiredLength}} symbols.
+        </div>
+
+        <div class="form-group has-danger">
+          <label class="form-control-label" for="new-year">Year</label>
+          <input formControlName="year" class="form-control is-invalid" id="new-year" type="number">
+        </div>
+        <div class="alert alert-danger" *ngIf="year.touched && year.errors?.required">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="year.errors?.min || year.errors?.max">
+          The year must be between {{minYear}} and {{maxYear}}.
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="new-description">Description</label>
+          <input formControlName="description" class="form-control" id="new-description" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="description.touched && description.errors?.required">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="description.errors?.minlength">
+            Description must be at least {{description.errors.minlength.requiredLength}} symbols.
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label class="form-control-label" for="new-price">Price</label>
+          <input formControlName="price" class="form-control" id="new-price" type="number">
+        </div>
+        <div class="alert alert-danger" *ngIf="price.touched && price.errors?.required">
+          This field is required.
+        </div>
+        <div class="alert alert-danger" *ngIf="price.errors?.min">
+            Price must be at least {{price.errors.min.min}}.
+          </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="new-image">Image</label>
+          <input formControlName="image" class="form-control" id="new-image" type="text">
+        </div>
+        <div class="alert alert-danger" *ngIf="image.touched && image.errors?.required">
+          This field is required.
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="new-material">Material (optional)</label>
+          <input formControlName="material" class="form-control" id="new-material" type="text">
+        </div>
+        <input type="submit" [disabled]="form.invalid" class="btn btn-primary" value="Create" />
+      </div>
+    </div>
+  </form>
+</div>

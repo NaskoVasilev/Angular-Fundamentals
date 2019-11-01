@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Sign In</h1>
+  <form #loginForm="ngForm" (ngSubmit)="signIn()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" 
+      name="email"
+      required
+      email
+      ngModel
+      #email="ngModel">
+      <div *ngIf="email.invalid && email.touched" class="alert alert-dark">
+        Please provide a correct email address!
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+      type="password" 
+      class="form-control" 
+      id="password" 
+      name="password"
+      required
+      minlength="4"
+      ngModel
+      #password="ngModel">
+      <div *ngIf="password.invalid && password.touched" class="alert alert-dark">
+        Password must have at least 4 characters
+      </div>
+    </div>
+    <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid">Sign In</button>
+  </form>
+</div>
