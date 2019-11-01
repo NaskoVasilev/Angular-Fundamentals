@@ -11,12 +11,14 @@
                     <div class="card-body">
                         <blockquote class="card-blockquote">
                             <img [src]="furniture.image" />
-                            <p>{{furniture.description}}</p>
+                            <p>{{furniture.description | slice : 0 : 11}} ...</p>
                             <footer>{{furniture.make}}
                                 <cite title="Source Title">{{furniture.model}}</cite>
                             </footer>
                             <div class="pull-right">
                                 <a [routerLink]="['/furniture', 'details', furniture._id]" class="btn btn-info">Details</a>
+                                <a *ngIf="isAdmin" [routerLink]="['/furniture', 'edit', furniture._id]" class="btn btn-success">Edit</a>
+                                <button *ngIf="isAdmin" (click)="deleteFurniture(furniture._id)" class="btn btn-danger">Delete item</button>
                             </div>
                         </blockquote>
                     </div>

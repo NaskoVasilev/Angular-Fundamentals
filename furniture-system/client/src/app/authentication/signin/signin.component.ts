@@ -29,6 +29,8 @@ export class SigninComponent implements OnInit {
       .subscribe((data) => {
         this.authService.saveToken(data['token']);
         this.authService.saveUsername(data['user']['name']);
+        this.authService.saveUsername(data['user']['name']);
+        this.authService.setIsAdmin(data['user']['isAdmin']);
         this.router.navigate([ '/home' ])
       });
   }

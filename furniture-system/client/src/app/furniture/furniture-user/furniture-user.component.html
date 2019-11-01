@@ -11,13 +11,14 @@
                 <div class="card-body">
                     <blockquote class="card-blockquote">
                         <img [src]="furniture.image" />
-                        <p>{{furniture.description}}</p>
+                        <p>{{furniture.description | slice : 0 : 11}} ...</p>
                         <footer>{{furniture.make}}
                             <cite title="Source Title">{{furniture.model}}</cite>
                         </footer>
                         <div class="pull-right">
-                            <a [routerLink]="['/furniture', 'details', furniture._id]" class="btn btn-info">Details</a>
-                            <a [routerLink]="['/furniture', 'delete', furniture._id]" class="btn btn-danger">Delete item</a>
+                            <a [routerLink]="['/furniture', 'details', furniture._id]" class="btn btn-sm btn-info">Details</a>
+                            <!-- <a [routerLink]="['/furniture', 'edit', furniture._id]" class="btn btn-sm btn-success">Edit</a> -->
+                            <button (click)="deleteFurniture(furniture._id)" class="btn btn-sm btn-danger">Delete</button>
                         </div>
                     </blockquote>
                 </div>

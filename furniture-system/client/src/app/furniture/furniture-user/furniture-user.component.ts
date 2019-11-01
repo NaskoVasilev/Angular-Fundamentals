@@ -15,4 +15,10 @@ export class FurnitureUserComponent implements OnInit {
   ngOnInit() {
     this.furniture$ = this.furnitureService.userFurnitures();
   }
+
+  deleteFurniture(id: string) {
+    this.furnitureService.delete(id).subscribe(_ => {
+      this.furniture$ = this.furnitureService.userFurnitures();
+    })
+  }
 }

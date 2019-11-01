@@ -7,6 +7,7 @@ export class AuthService {
   private readonly registerUrl = 'auth/register';
   private readonly tokenKey = 'token';
   private readonly usernameKey = 'username';
+  private readonly isAdminKey = 'isAdmin';
 
   constructor(
     private http : HttpClient
@@ -42,5 +43,13 @@ export class AuthService {
 
   saveUsername(username: string): void{
     localStorage.setItem(this.usernameKey, username);
+  }
+
+  isAdmin(): boolean{
+    return localStorage.getItem(this.isAdminKey).toLowerCase() === 'true';
+  }
+
+  setIsAdmin(isAdmin: string): void{
+    localStorage.setItem(this.isAdminKey, isAdmin);
   }
 }

@@ -16,6 +16,6 @@ export class FurnitureDetailsComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.params.id;
     
-    this.furnitureService.getById(id).subscribe(data => this.furniture = data);
+    this.furnitureService.getDetails(id).subscribe(data => this.furniture = data);
   }
 }

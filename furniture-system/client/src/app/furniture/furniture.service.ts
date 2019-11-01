@@ -12,6 +12,8 @@ export class FurnitureService {
   private readonly detailsUrl = 'furniture/details/';
   private readonly userUrl = 'furniture/user';
   private readonly deleteUrl = 'furniture/delete/';
+  private readonly getByIdUrl = 'furniture/';
+  private readonly editUrl = 'furniture/edit/';
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +25,7 @@ export class FurnitureService {
     return this.http.get<Furniture[]>(this.allUrl);
   }
 
-  getById(id: string): Observable<Furniture> {
+  getDetails(id: string): Observable<Furniture> {
     return this.http.get<Furniture>(this.detailsUrl + id);
   }
 
@@ -33,5 +35,13 @@ export class FurnitureService {
 
   userFurnitures(): Observable<Furniture[]> {
     return this.http.get<Furniture[]>(this.userUrl);
+  }
+
+  getById(id: string): Observable<Furniture> {
+    return this.http.get<Furniture>(this.getByIdUrl + id);
+  }
+  
+  edit(id: string, furniture: Furniture) {
+    return this.http.put(this.editUrl + id, furniture);
   }
 }
