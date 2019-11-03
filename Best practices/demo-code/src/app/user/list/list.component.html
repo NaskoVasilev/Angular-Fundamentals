@@ -1,0 +1,10 @@
+<div>
+  <button routerLink="/user/create">Add user</button>
+</div>
+
+<ul>
+  <li *ngFor="let user of userList$ | async">
+    <span>{{user.firstName}} </span>
+    <span>{{user.lastName}}</span>
+  </li>
+</ul>

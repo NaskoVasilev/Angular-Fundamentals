@@ -1,0 +1,15 @@
+<form #form="ngForm"  (submit)="submitHandler(form.value)">
+  <div>
+   <div>
+      <label for="firstName">First name</label>
+   </div>
+    <input ngModel name="firstName" id="firstName" type="text">
+  </div>
+  <div>
+    <div>
+        <label for="lastName">Last name</label>
+    </div>
+    <input ngModel name="lastName" id="lastName" type="text">
+  </div>
+  <input type="submit">
+</form>
