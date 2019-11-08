@@ -1,0 +1,68 @@
+header {
+  position: relative;
+}
+
+.logo, .header {
+  font-size: 3em;
+}
+
+#profile {
+  display: inline-block;
+  background: #ffffff;
+  text-align: right;
+  vertical-align: bottom;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#profile span {
+  padding: 5px 10px;
+}
+
+#profile a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+#profile a:hover {
+  color: #000000;
+}
+
+/* Nav CSS */
+#menu {
+  display: inline-block;
+  float: right;
+  border: 1px solid black;
+  margin: 15px;
+  width: 200px;
+}
+
+#menu .title {
+  background: #ddf9c0;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav {
+  font-size: 1.25em;
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.nav:hover {
+  background: #ddf9c0;
+}
+
+.nav:visited {
+}
+
+.nav.active {
+  background: #ffffff;
+}
