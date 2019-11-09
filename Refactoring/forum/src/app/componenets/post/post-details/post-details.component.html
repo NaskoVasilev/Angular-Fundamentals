@@ -1,0 +1,10 @@
+<section id="viewComments">
+  <app-post-info [post]="post" [rank]="1" [showDescription]="true"></app-post-info>
+  <div class="post post-content">
+    <app-comment-create (createCommentEmitetr)="postComment($event)">
+    </app-comment-create>
+  </div>
+  <app-comment-info *ngFor="let commentInfo of comments$ | async" [comment]="commentInfo"
+    (deleteCommentEventEmitter)="deleteComment($event)">
+  </app-comment-info>
+</section>

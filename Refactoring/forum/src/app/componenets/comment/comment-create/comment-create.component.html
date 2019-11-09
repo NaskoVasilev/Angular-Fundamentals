@@ -1,0 +1,5 @@
+<form #form="ngForm" (ngSubmit)="postComment()" id="commentForm">
+  <label>Comment</label>
+  <textarea required ngModel name="content" type="text"></textarea>
+  <input type="submit" [disabled]="form.invalid" value="Add Comment" id="btnPostComment">
+</form>
