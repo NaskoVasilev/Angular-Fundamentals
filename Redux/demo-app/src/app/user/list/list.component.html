@@ -1,0 +1,7 @@
+<p>List all users in the system</p>
+<ul>
+    <li *ngFor="let user of users$ | async">
+        {{user.name}} 
+        <button (click)="deleteHandler(user.id)">delete</button>
+    </li>
+</ul>
