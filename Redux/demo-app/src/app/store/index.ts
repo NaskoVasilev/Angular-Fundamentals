@@ -1,8 +1,10 @@
 import { ActionReducerMap } from '@ngrx/store'
-import { IState, reducer } from './reducer';
+import { IState, reducer, courseReducer } from './reducer';
+import { Course } from '../models/course';
 
 export interface IAppState {
     app: IState;
+    courses: Course[]
 }
 
-export const reducers: ActionReducerMap<IAppState> = { app: reducer }
+export const reducers: ActionReducerMap<IAppState> = { app: reducer, courses: courseReducer  }

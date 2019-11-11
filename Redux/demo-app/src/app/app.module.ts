@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { reducers } from './store';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CourseCreateComponent } from './course-create/course-create.component';
+import { CourseListComponent } from './course-list/course-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CourseCreateComponent,
+    CourseListComponent
   ],
   imports: [
     BrowserModule,
