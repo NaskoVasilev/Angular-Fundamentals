@@ -1,47 +1,9 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav role="navigation">
-      <mat-nav-list>
-          <div>
-            <a *ngIf="!isAuth" mat-list-item routerLink="/signup">
-              <mat-icon>perm_identity</mat-icon>
-              Sign Up
-            </a>
-            <a *ngIf="!isAuth" mat-list-item routerLink="/login">
-              <mat-icon>account_circle</mat-icon>
-              Log In
-            </a>
-            <a *ngIf="isAuth" mat-list-item routerLink="/user">
-              <mat-icon>question_answer</mat-icon>
-              Events
-            </a>
-            <a *ngIf="isAuth" (click)="logout()" class="logout-link" mat-list-item>
-              <mat-icon>eject</mat-icon>
-              Logout
-            </a>
-          </div>
-        </mat-nav-list>
+  <mat-sidenav #sidenav>
+    <app-sidebar-list></app-sidebar-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-        <div fxHide.gt-xs>
-          <button mat-icon-button (click)="toggleSidenav()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </div>
-        <div><a routerLink="/">Sli.do</a></div>
-        <ul
-        fxFlex 
-        fxLayout 
-        fxLayoutAlign="flex-end" 
-        fxLayoutGap="20px" 
-        fxHide.xs 
-        class="navigation-links">
-        <li><a *ngIf="!isAuth" routerLink="/login">Log In</a></li>
-        <li><a *ngIf="!isAuth" routerLink="/signup">Sign Up</a></li>
-        <li><a *ngIf="isAuth" routerLink="/user">Events</a></li>
-        <li><a *ngIf="isAuth" (click)="logout()" class="logout-link">Logout</a></li>
-      </ul>
-    </mat-toolbar>
+    <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
     <main>
       <router-outlet></router-outlet>
     </main>

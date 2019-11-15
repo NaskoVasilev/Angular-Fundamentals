@@ -1,30 +1,9 @@
-/* Naigation css */
-/* Toolbar CSS */
-a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  a:hover {
-    color: orange;
-  }
-  
-  .logout-link {
-    cursor: pointer;
-  }
-  
-  .navigation-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
 
-  
 /* Sidenav CSS */
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
-    height: 100%;
-  }
-  
-  mat-sidenav {
-    width: 250px;
-  }
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
