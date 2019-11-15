@@ -17,6 +17,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { CreateEventComponent } from './user/create-event/create-event.component';
+import { EventListComponent } from './user/event-list/event-list.component';
+import { UserTabComponent } from './user/user-tab/user-tab.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { environment } from 'src/environments/environment';
     SidebarListComponent,
     EventLiveComponent,
     EventPostQuestionComponent,
-    EventQuestionInfoComponent
+    EventQuestionInfoComponent,
+    CreateEventComponent,
+    EventListComponent,
+    UserTabComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

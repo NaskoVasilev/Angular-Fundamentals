@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { EventService } from 'src/app/core/services/event.service';
 
 @Component({
   selector: 'app-event-post-question',
@@ -14,7 +15,7 @@ export class EventPostQuestionComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    //private eventService: EventService
+    private eventService: EventService
   ) { }
 
   ngOnInit() {
@@ -30,12 +31,12 @@ export class EventPostQuestionComponent implements OnInit {
   postQuestion() {
     const text = this.questionForm.value.text;
     const email = localStorage.getItem('email');
-    // this.eventService.addQuestion({ 
-    //   text: text, 
-    //   createdOn: new Date(), 
-    //   eventId: this.eventId, 
-    //   username: email === null ? 'Anonymous' : email 
-    // });
+    this.eventService.addQuestion({ 
+      text: text, 
+      createdOn: new Date(), 
+      eventId: this.eventId, 
+      username: email === null ? 'Anonymous' : email 
+    });
 
     this.questionForm.reset();
   }

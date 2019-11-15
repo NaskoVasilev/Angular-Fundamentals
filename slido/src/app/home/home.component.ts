@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EventService } from '../core/services/event.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    //private eventService: EventService
+    private eventService: EventService
   ) { }
 
   ngOnInit() {
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   enterEvent() {
     const eventCode = this.joinForm.value.eventCode;
-    //this.eventService.fetchEventByCode(eventCode);
+    this.eventService.fetchEventByCode(eventCode);
   }
 
 }
