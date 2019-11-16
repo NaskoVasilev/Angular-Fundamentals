@@ -70,7 +70,7 @@ export class EventService {
   fetchQuestsionsForEvent(eventId: string) {
     this.eventSubscriptions.push(this.angularFirestore.collection<Question>('questions', (ref) => ref
       .where('eventId', '==', eventId)
-      .orderBy('createdOn', 'asc'))
+      )
       .valueChanges()
       .subscribe((questions) => {
         this.questionsForEvent = questions;

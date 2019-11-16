@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-sidebar-list',
@@ -7,23 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarListComponent implements OnInit {
   isAuth: boolean = false;
-  //isAuthSub: Subscription;
+  isAuthSub: Subscription;
 
   constructor(
-    //private authService: AuthService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
-    // this.isAuthSub = this.authService.isAuthChanged.subscribe((data) => {
-    //   this.isAuth = data;
-    // });
+    this.isAuthSub = this.authService.isAuthChanged.subscribe((data) => {
+      this.isAuth = data;
+    });
   }
 
   ngOnDestroy() {
-    //this.isAuthSub.unsubscribe();
+    this.isAuthSub.unsubscribe();
   }
 
   logout() {
-    //this.authService.logout();
+    this.authService.logout();
   }
 }

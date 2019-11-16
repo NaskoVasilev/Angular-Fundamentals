@@ -47,6 +47,8 @@ export class AuthService {
       .then((userData) => {
         this.router.navigate([ '/user' ]);
         localStorage.setItem('email', userData.user.email);
+        this.isAuth = true;
+        this.isAuthChanged.next(true);
       })
       .catch((error) => {
         this.snackbar.open(error.message, 'Undo', {
@@ -56,8 +58,8 @@ export class AuthService {
   }
 
   logout() {
-    // this._isAuth = false;
-    // this.isAuthChanged.next(false);
+    this.isAuth = false;
+    this.isAuthChanged.next(false);
     this.angularFireAuth.auth.signOut();
     localStorage.clear();
     this.router.navigate([ '/' ]);

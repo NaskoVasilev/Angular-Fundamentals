@@ -10,8 +10,8 @@ import { EventService } from 'src/app/core/services/event.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, {read: MatPaginator, static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {read: MatSort, static: true}) sort: MatSort;
   displayedColumns: string[] = [ 'code', 'createdOn', 'expiresOn' ];
   dataSource = new MatTableDataSource<ListSlidoEvent>();
   allEventsSubscription: Subscription;

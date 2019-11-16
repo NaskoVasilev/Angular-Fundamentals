@@ -1,0 +1,19 @@
+<section id="viewSubmit">
+  <div class="submitArea">
+    <h1>Submit Link</h1>
+    <p>Please, fill out the form. A thumbnail image is not required.</p>
+  </div>
+  <div class="submitArea formContainer">
+    <form #f="ngForm" (ngSubmit)="createPost()" id="submitForm" class="submitForm">
+      <label>Link URL:</label>
+      <input required name="url" ngModel type="text">
+      <label>Link Title:</label>
+      <input required name="title" ngModel type="text">
+      <label>Link Thumbnail Image (optional):</label>
+      <input required name="imageUrl" ngModel type="text">
+      <label>Description (optional):</label>
+      <textarea name="description" ngModel></textarea>
+      <input id="btnSubmitPost" [disabled]="f.invalid" value="Submit" type="submit">
+    </form>
+  </div>
+</section>
