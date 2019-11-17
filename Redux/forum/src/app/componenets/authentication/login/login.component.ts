@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../../core/services/auth.service';
+import { Store } from '@ngrx/store';
+import { Login } from 'src/app/store/auth/actions';
 
 @Component({
   selector: 'app-login',
@@ -12,19 +14,13 @@ import { AuthService } from '../../../core/services/auth.service';
 export class LoginComponent implements OnInit {
   @ViewChild('f') loginForm: NgForm;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) { }
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.authService
-      .login(this.loginForm.value)
-      .subscribe((data) => {
-        this.router.navigate(['/posts']);
-      })
+    const { username, password} = this.loginForm.value;
+    this.store.dispatch(new Login({ username, password }));
   }
 }
