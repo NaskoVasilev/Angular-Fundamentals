@@ -4,15 +4,6 @@
     </mat-form-field>
   </div>
   <mat-table [dataSource]="dataSource" matSort>
-    <!-- <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>
-        No
-      </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        {{element.id}}
-      </mat-cell>
-    </ng-container> -->
-  
     <ng-container matColumnDef="code">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Event Code
