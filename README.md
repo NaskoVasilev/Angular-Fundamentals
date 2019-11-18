@@ -17,8 +17,8 @@ Solutions, demos and projects from course "Angular Fundamentals - March 2019" at
 8. PIPES, AUTHENTICATION AND INTERCEPTORS
    - Creating Custom Pipes, Authentication & JWT, Intercepting HTTP Requests
 9. WORKSHOP: FURNITURE SYSTEM
-10. BEST PRACTICES
+BEST PRACTICES
    - Code Style, Architecture, Lazy Loading, Unit Testing
-11. REDUX STATE MANAGEMENT
-   - Intro to Redux, NgRX
-12. ANGULAR MATERIAL
+REDUX STATE MANAGEMENT
+   - Intro to Redux, NgRX 
+ANGULAR MATERIAL
